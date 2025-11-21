@@ -3,18 +3,28 @@
   <head>
     <script src="https://aframe.io/releases/1.7.1/aframe.min.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
+    <a-scene inspector="url: https://aframe.io/releases/1.5.0/aframe-inspector.min.js"></a-scene>
+    <img id="sky" src="assets/31892034375_42061fe969_b.jpg" alt="sky image">
+    <img id="stars" src="assets/20594618524_86b2e77682_o.jpg" alt="starry">
+    <img id="stone" src="assets/19612410829_ac63baa3bb_b.jpg" alt="stone">
 
     
   </head>
   <body>
+    
     <a-scene>
-      <!-- <a-assets>
-        <a-asset-item id="Altar" src="assets/Altar.stl"></a-asset-item>
-      </a-assets> -->
+      <a-assets>
+        <a-asset-item id="Altar" src="assets/Altar.obj"></a-asset-item>
+        <a-asset-item id="Envoy" src="assets/Dread_Envoy.stl.obj"></a-asset-item>
+        
+      </a-assets>
 
-      <a-entity stl-model="src: url(assets/Altar.stl)" position="100 0 -100" scale=".001 .001 .001" color="green"></a-entity>
+      <a-obj-model src="#Altar" position="0 -3 -10" rotation="-90 0 0" scale=".13 .13 .13" material="src: #stone"></a-obj-model>
+      <a-obj-model src="#Envoy" position="6 1 -13" rotation="-90 -45 0" scale=".004 .004 .004" color="black"></a-obj-model>
+      <a-obj-model src="#Envoy" position="-6 1 -13" rotation="-90 45 0" scale=".004 .004 .004" color="black"></a-obj-model>
+      <a-plane position="0 -3 -4" rotation="-90 0 0" width="20" height="30" src="#stone"></a-plane> 
 
-      <a-sky color="#FFFFFF"></a-sky>
+      <a-sky src="#sky"></a-sky>
     </a-scene>
   </body>
 </html>
